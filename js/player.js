@@ -42,6 +42,7 @@
       cur = { q, ref, attempts: 0, done: false, ready: false };
       clearFb();
       card.innerHTML = '';
+      card.dataset.w = q.kind === 'concept' ? 'concept' : q.widget || '';
       card.classList.remove('enter'); void card.offsetWidth; card.classList.add('enter');
       const kind = opts.review ? 'review' : q.kind;
       card.append(h('div', { class: 'kind k-' + kind }, KIND[kind] || ''));

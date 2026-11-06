@@ -277,8 +277,11 @@
       const padHint = h('div', { class: 'help' });
       const padWrap = h('div', { class: 'minipad-wrap' }, padHint, h('div', { class: 'eq pad-eq' }, padExpr, h('span', null, '='), padAns), pad);
       box.append(
-        h('p', { class: 'help' }, q.help || 'Kéo bất kỳ số nào – kể cả x – sang vế bên kia (qua dấu “=” thì đổi phép tính), hoặc kéo trong cùng một vế để đổi chỗ.'),
-        histBox, balance, status, padWrap);
+        h('p', { class: 'help eq-help' }, q.help || 'Kéo bất kỳ số nào – kể cả x – sang vế bên kia (qua dấu “=” thì đổi phép tính), hoặc kéo trong cùng một vế để đổi chỗ.'),
+        // màn hình hẹp: lời giải ở trên; màn hình rộng (iPad ngang): lời giải ở cột phải
+        h('div', { class: 'eq-layout' },
+          h('div', { class: 'eq-main' }, balance, status, padWrap),
+          h('div', { class: 'eq-side' }, histBox)));
 
       const say = (html, cls) => { status.innerHTML = html; status.className = 'eq-status ' + (cls || ''); };
       const shake = (el) => { if (!el) return; el.classList.remove('shake'); void el.offsetWidth; el.classList.add('shake'); };
