@@ -129,6 +129,11 @@
     } catch (e) { /* trình duyệt không hỗ trợ */ }
   };
 
+  /* ---------- Chặn phóng to bằng 2 ngón tay (iPad/iPhone bỏ qua user-scalable=no) ---------- */
+  ['gesturestart', 'gesturechange', 'gestureend'].forEach((ev) =>
+    document.addEventListener(ev, (e) => e.preventDefault(), { passive: false }));
+  document.addEventListener('touchmove', (e) => { if (e.touches && e.touches.length > 1) e.preventDefault(); }, { passive: false });
+
   /* ---------- Bàn phím ---------- */
   M.keyHandler = null;
   document.addEventListener('keydown', (e) => { if (M.keyHandler) M.keyHandler(e); });

@@ -469,4 +469,45 @@ sup { font-size: .65em; }
   .side { font-size: 1.5rem; }
 }
 
+/* ---------- Chống phóng to khi chạm đúp (iPad) ---------- */
+html, body { touch-action: manipulation; -webkit-text-size-adjust: 100%; }
+
+/* ---------- Bố cục phương trình ---------- */
+.eq-layout { display: flex; flex-direction: column; }
+.eq-side { order: -1; }          /* màn hình hẹp: lời giải nằm trên */
+.eq-side .eq-hist { margin: 0 auto 12px; }
+
+/* Màn hình rộng (iPad xoay ngang, laptop): lời giải sang cột phải */
+@media (min-width: 900px) {
+  .pcard[data-w="equation"] { max-width: 1120px; }
+  .ptop { padding-left: max(16px, calc((100vw - 1120px) / 2)); padding-right: max(16px, calc((100vw - 1120px) / 2)); }
+  .pfoot-in { max-width: 1120px; }
+  .eq-layout { display: grid; grid-template-columns: minmax(0, 1fr) 290px; gap: 18px; align-items: start; }
+  .eq-side { order: 0; position: sticky; top: 64px; }
+  .eq-side .eq-hist { margin: 0; max-width: none; max-height: calc(100vh - 230px); max-height: calc(100dvh - 230px); }
+  .eq-main .balance { margin-top: 0; }
+}
+
+/* Màn hình thấp (iPad ngang ~ 700–820px chiều cao): thu gọn khoảng trống để không phải cuộn */
+@media (min-width: 900px) and (max-height: 900px) {
+  .ptop { padding-top: 8px; padding-bottom: 8px; }
+  .pcard { padding-top: 6px; padding-bottom: 10px; }
+  .pcard .kind { margin-bottom: 4px; padding: 3px 9px; font-size: .72rem; }
+  .pcard .q-title { font-size: 1.3rem; margin-bottom: 2px; }
+  .pcard .prompt { font-size: 1.05rem; margin-bottom: 8px; line-height: 1.45; }
+  .pcard[data-w="equation"] .eq-help { display: none; }
+  .pan { min-height: 96px; padding: 6px 10px 10px; }
+  .pan small { margin-bottom: 4px; }
+  .eq-status { margin: 8px 0 2px; min-height: 24px; font-size: .93rem; }
+  .minipad-wrap .help { margin: 4px 0; font-size: .84rem; }
+  .pad-eq { margin: 2px 0 8px; font-size: 1.35rem; }
+  .minipad .mk { height: 42px; }
+  .pfoot-in { padding-top: 10px; padding-bottom: calc(10px + env(safe-area-inset-bottom)); }
+  .pfoot .btn { padding: 11px 24px; }
+  /* các dạng bài khác cũng gọn hơn */
+  .numpad .key { height: 48px; }
+  .eq { margin: 8px 0; }
+  svg.thermo { height: min(46vh, 380px); }
+}
+
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
