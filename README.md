@@ -7,6 +7,7 @@ Bản hiện tại – **Toán 6, SGK Kết nối tri thức** (23 bài):
 - **Chương I – Tập hợp các số tự nhiên** (Bài 1–7 + ôn tập): tập hợp, ghi số & số La Mã, thứ tự, cộng trừ, nhân chia, lũy thừa, thứ tự phép tính.
 - **Chương II – Tính chia hết** (Bài 8–12 + ôn tập): ước & bội, dấu hiệu chia hết, số nguyên tố, ƯCLN, BCNN.
 - **Chương III – Số nguyên** (Bài 13–17 + thử thách): số âm, trục số, so sánh, cộng, trừ, quy tắc dấu ngoặc, nhân, chia hết – ước và bội.
+- **Chuyên đề Tìm x** (6 bài): kéo các số qua dấu “=” – cộng ⇄ trừ, nhân ⇄ chia; hai bước, có ngoặc, số nguyên. Lời giải được ghi lại từng dòng như trong vở.
 
 ## Chạy thử
 - **Cách nhanh nhất:** nhấp đúp `index.html` (không cần cài gì, không cần server).
@@ -40,7 +41,9 @@ js/widgets/chips.js     mô hình chip +1 / −1
 js/widgets/sets.js      multi (chọn tất cả), bins (phân loại vào nhóm), rect (xếp gạch hình chữ nhật)
 lessons/lop6/chuong1.js      Chương I – Tập hợp các số tự nhiên
 lessons/lop6/chuong2.js      Chương II – Tính chia hết
+js/widgets/equation.js  equation (phương trình kéo thả qua dấu “=”)
 lessons/lop6/so-nguyen.js    Chương III – Số nguyên
+lessons/lop6/chuyen-de-tim-x.js  Chuyên đề Tìm x
 lessons/lop6/chuong-lop6.js  các chương IV–IX (đang “sắp có”)
 ```
 

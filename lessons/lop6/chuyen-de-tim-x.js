@@ -84,7 +84,7 @@
         title: 'Cộng ⇄ Trừ', icon: '➕', desc: 'Kéo +2 qua dấu “=” và xem nó biến thành gì!',
         steps: [
           Object.assign(eq(5, [{ op: '+', v: 2 }]), { kind: 'explore', title: 'Phép màu ở dấu “=”',
-            prompt: 'Tìm x, biết <span class="big">x + 2 = 7</span>.<br>Hãy <b>kéo ô “+ 2”</b> qua dấu “=” sang vế phải. Để ý xem dấu của nó thay đổi thế nào!',
+            prompt: 'Tìm x, biết <span class="big">x + 2 = 7</span>.<br>Hãy <b>kéo số 2</b> qua dấu “=” sang vế phải. Để ý xem dấu của nó thay đổi thế nào!',
             explain: 'Khi sang vế phải, <b>+ 2</b> biến thành <b>− 2</b>: x = 7 − 2 = 5. Thử lại: 5 + 2 = 7 ✔' }),
           { kind: 'concept', title: 'Vì sao lại đổi dấu?',
             html: `<p>⚖️ Hãy tưởng tượng phương trình là một <b>chiếc cân thăng bằng</b>: vế trái nặng bằng vế phải.</p>
@@ -111,7 +111,7 @@
         title: 'Nhân ⇄ Chia', icon: '✖️', desc: '3 · x = 12: kéo “3 ·” qua dấu bằng thành “: 3”.',
         steps: [
           Object.assign(eq(4, [{ op: '·', v: 3 }]), { kind: 'explore',
-            prompt: 'Tìm x, biết <span class="big">3 · x = 12</span>.<br>Kéo ô <b>“3 ·”</b> sang vế phải. Lần này nó biến thành gì?',
+            prompt: 'Tìm x, biết <span class="big">3 · x = 12</span>.<br>Kéo <b>số 3</b> sang vế phải. Lần này nó biến thành gì?',
             explain: '<b>3 ·</b> sang vế phải thành <b>: 3</b>: x = 12 : 3 = 4. Thử lại: 3 · 4 = 12 ✔' }),
           { kind: 'concept', title: 'Nhân thành chia, chia thành nhân',
             html: `<p>⚖️ 3 · x = 12 nghĩa là 3 gói x nặng bằng 12. <b>Chia cả hai đĩa cân cho 3</b>, ta được 1 gói x nặng bằng 12 : 3.</p>
